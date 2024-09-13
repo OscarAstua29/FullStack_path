@@ -81,13 +81,13 @@ class Task(MethodView):
 
            
     
-    def put(self):
+    def patch(self):
         data = request.json
         if not data:
             return jsonify({"error": "Request body must be JSON"}), 400
 
         
-        task_id = data.get('id')
+        id = data.get('id')
         title = data.get('title')
         description = data.get('description')
         status = data.get('status')
@@ -105,9 +105,9 @@ class Task(MethodView):
         try:
 
             task_list = import_file() or []
-
+            print(id)
             for task in task_list:
-                if str(task.get('id')) == str(id):
+                if task['id'] == id:
                 
                     task.update({'id': id, 'title': title, 'description': description, 'status': status})
                     break
