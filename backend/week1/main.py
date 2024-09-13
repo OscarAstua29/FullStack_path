@@ -1,3 +1,5 @@
+# This file was developed in Flash handling request from the url.
+
 import json
 from flask import Flask
 from flask import request
