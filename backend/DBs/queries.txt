@@ -1,0 +1,65 @@
+CREATE TABLE products (
+	id INT PRIMARY KEY,
+	code VARCHAR(25) UNIQUE NOT NULL,
+	product_name VARCHAR(50) NO NULL,
+	price FLOAT,
+	income_date DATE,
+	brand VARCHAR(50)
+
+);
+
+CREATE TABLE purchase (
+	id INT PRIMARY KEY,
+	purchase_product INT REFERENCES products(id),
+	quantity INT NOT NULL DEFAULT 0,
+	purchase_amount FLOAT NOT NULL DEFAULT 0
+	
+);
+
+CREATE TABLE user_cart (
+	id INT PRIMARY KEY,
+	buyer_email VARCHAR(50) NOT NULL
+	
+);
+
+CREATE TABLE invoice (
+	id INT PRIMARY KEY,
+	invoice_id INT UNIQUE NOT NULL,
+	invoice_date DATE,
+	user_id VARCHAR(50) REFERENCES user_cart(id),
+	total_invoice_amount FLOAT NOT NULL DEFAULT 0
+	
+);
+
+ALTER TABLE invoice
+	ADD user_cellphone_number VARCHAR (50);
+
+ALTER TABLE invoice
+    ADD seller_id VARCHAR(50);
+
+SELECT * 
+FROM products;---
+
+SELECT * 
+FROM products;
+WHERE price > 50000;---
+
+SELECT * 
+FROM purchase;
+WHERE  purchase_product = <product_id>;----
+
+SELECT  product_id,SUM(quantity) AS total_bought
+FROM purchase;
+GROUP BY product_id;----
+
+SELECT * 
+FROM invoice;
+WHERE user_id = <id>
+
+SELECT * 
+FROM invoice;
+ORDER BY total_invoice_amount DES;
+
+SELECT * 
+FROM invoice;
+WHERE invoice_id = <invoice_id>;
