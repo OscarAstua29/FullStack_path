@@ -1,0 +1,8 @@
+docker run --name postgres -e POSTGRES_USER=OAC -e POSTGRES_PASSWORD=OAC2910 -e POSTGRES_DB=mydb -p 5433:5432 -d postgres
+
+docker exec -it postgres bash
+
+psql -U OAC  -- mydb --password
+
+
+\\\\\\\\\\\\\\\

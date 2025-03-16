@@ -1,0 +1,19 @@
+{
+    "apiVersion": "v1",
+    "items" : [
+        {
+            "apiVersioniVersion": "marquis.walmart.com/v1",
+            "kind": "Cname",
+            "metadata": {
+                "anotations": {
+                    "app.kubernetes.io/commit-hash": "xxx",
+                    "app.kubernetes.io/apm-id": "xxx",
+                    "kitt.wcnp.io/apm-id": "xxxx",
+                    "kitt.wcnp.io/profile": "dev",
+                    "kitt.wcnp.io/stage-name":"stage"
+
+                }
+            }
+        }
+    ]
+}
