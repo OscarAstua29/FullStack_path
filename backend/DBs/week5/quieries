@@ -1,0 +1,87 @@
+POST 
+
+http://localhost:5000/add/drivers
+
+{
+  "full_name": "oscar astua",
+  "email": "oscarastua2002.gmail.com",
+  "username": "astuach",
+  "password": "INPROGRESS",
+  "birth_date": "1-1-2025",
+  "driver_status": "DELINQUET"
+}
+
+http://localhost:5000/add/vehicles
+
+{
+  "brand": "audi",
+  "model": "x5",
+  "manufacture_year": 2024,
+  "vehicle_status": "available"
+ 
+}
+
+http://localhost:5000/add/reservations
+
+{
+  "driver": 1,
+  "vehicle": 1,
+  "reservation_date": "1-1-2025",
+  "reservation_status": "IN PROGRESS"
+}
+
+
+---------------------------------------------------------------------------------
+
+PUT
+
+http://localhost:5000/modify/drivers
+
+{
+    "id": "1",
+    "driver_status": "PAID"
+
+}
+
+
+http://localhost:5000/modify/vehicles
+
+{
+    "id": "1",
+    "vehicle_status": "DISABLED"
+
+}
+
+http://localhost:5000/modify/reservations
+
+{
+    "id": "1",
+    "reservation_status": "CANCELED"
+
+}
+
+
+------------------------------------------------------------------
+GET
+
+http://localhost:5000/get/all
+
+{
+    "table_name": "RESERVATIONS"
+
+}
+
+http://localhost:5000/get/filter
+
+{
+    "table_name": "drivers",
+    "filter_by": "email",
+    "filter": "oscarastua2002.gmail.com"
+
+}
+
+
+
+
+
+
