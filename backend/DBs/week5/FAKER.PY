@@ -1,3 +1,5 @@
+#This file is just to provide random data for car_rental_t1.py file
+
 from faker import Faker
 from faker_vehicle import VehicleProvider
 

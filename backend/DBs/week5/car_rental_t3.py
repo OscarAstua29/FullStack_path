@@ -5,6 +5,9 @@ from connection import PgManager
 app = Flask(__name__)
 
 
+#this example is just the fists attempt, its okey, but I divide the code in deferent classes in the car_rental_file_3.1, as Alek told me
+
+
 class Car_Rental_API(MethodView):
 
     
@@ -140,7 +143,7 @@ class Car_Rental_API(MethodView):
         
  #----------------------------------------------------------------------------------------------------------------------------------
 
-    def put(self, option):
+    def patch(self, option):
 
         data = request.json
 
@@ -290,6 +293,8 @@ class Car_Rental_API(MethodView):
                 print("estoy acá")
                 return jsonify({f"error": f"Not id found in {option}"}), 400    # this line is no running  
             
+            return 0
+            
         except Exception as e:
             return jsonify({"error":str(e)}), 500  
                 
@@ -312,7 +317,7 @@ class Car_Rental_API(MethodView):
 
 task_view = Car_Rental_API.as_view('task')
 app.add_url_rule('/add/<string:option>', view_func=task_view, methods=['POST'])
-app.add_url_rule('/modify/<string:option>', view_func=task_view, methods=['PUT'])
+app.add_url_rule('/modify/<string:option>', view_func=task_view, methods=['PATCH'])
 app.add_url_rule('/get/<string:action>', view_func=task_view, methods=['GET'])
 
 

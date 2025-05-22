@@ -1,6 +1,6 @@
 POST 
 
-http://localhost:5000/add/drivers
+http://localhost:5000/drivers ok
 
 {
   "full_name": "oscar astua",
@@ -11,7 +11,7 @@ http://localhost:5000/add/drivers
   "driver_status": "DELINQUET"
 }
 
-http://localhost:5000/add/vehicles
+http://localhost:5000/vehicles  ok
 
 {
   "brand": "audi",
@@ -21,7 +21,7 @@ http://localhost:5000/add/vehicles
  
 }
 
-http://localhost:5000/add/reservations
+http://localhost:5000/reservations ok
 
 {
   "driver": 1,
@@ -33,29 +33,29 @@ http://localhost:5000/add/reservations
 
 ---------------------------------------------------------------------------------
 
-PUT
+PATCH
 
-http://localhost:5000/modify/drivers
+http://localhost:5000/drivers  ok
 
 {
-    "id": "1",
+    "id": 1,
     "driver_status": "PAID"
 
 }
 
 
-http://localhost:5000/modify/vehicles
+http://localhost:5000/vehicles ok
 
 {
-    "id": "1",
+    "id": 1,
     "vehicle_status": "DISABLED"
 
 }
 
-http://localhost:5000/modify/reservations
+http://localhost:5000/reservations ok
 
 {
-    "id": "1",
+    "id": 1,
     "reservation_status": "CANCELED"
 
 }
@@ -64,20 +64,44 @@ http://localhost:5000/modify/reservations
 ------------------------------------------------------------------
 GET
 
-http://localhost:5000/get/all
+http://localhost:5000/drivers  ok get all data
 
 {
-    "table_name": "RESERVATIONS"
+ 
+}
+
+http://localhost:5000/drivers ok data filter by
+
+{
+    "filter_by": "email",
+    "filter": "oscarastua2002.gmail.com"
+}
+
+http://localhost:5000/vehicles ok get all data
+
+{
 
 }
 
-http://localhost:5000/get/filter
+http://localhost:5000/vehicles ok
 
 {
-    "table_name": "drivers",
-    "filter_by": "email",
-    "filter": "oscarastua2002.gmail.com"
+    "filter_by": "manufacture_year",
+    "filter": "2024"
+}
 
+
+http://localhost:5000/reservations  ok get all data
+
+{
+
+}
+
+http://localhost:5000/reservations ok
+
+{
+    "filter_by": "driver",
+    "filter": "2"
 }
 
 

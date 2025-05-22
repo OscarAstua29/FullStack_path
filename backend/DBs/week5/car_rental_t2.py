@@ -88,7 +88,7 @@ def devolution (driver,vehicle_rented,reservation_date, ):
         
     )
 
-def desable_vehicle(vehicle_rented):
+def disable_vehicle(vehicle_rented):
 
     db_manager.execute_query(
 
