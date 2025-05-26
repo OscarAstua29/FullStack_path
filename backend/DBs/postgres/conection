@@ -1,0 +1,20 @@
+import psycopg2
+
+connection = psycopg2.connect(
+    host="localhost",
+    port=5433,
+    user="OAC",
+    password="OAC2910",
+    dbname="postgres",
+)
+print("Connected to the database")dsdddddd
+
+cursor = connection.cursor()
+
+cursor.execute('SELECT version()')
+
+print("Connected to the database")
+
+results = cursor.fetchall()
+
+print(results)
